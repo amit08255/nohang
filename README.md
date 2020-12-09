@@ -262,6 +262,44 @@ The program can be configured by editing the config file. The configuration incl
 
 Just read the description of the parameters and edit the values. Please restart nohang to apply the changes.
 
+## Setup in Ubuntu / Linux
+
+First install nohang in your system as per instructions provided above. Once you are done with installing run below commands -
+
+```sh
+sudo systemctl disable nohang.service
+sudo systemctl enable nohang-desktop.service
+sudo systemctl start nohang-desktop.service 
+sudo systemctl status nohang-desktop.service 
+```
+
+You will see the status running, press **Ctrl+C** to exit. Now run below command -
+
+```sh
+sudo nano /usr/local/etc/nohang/nohang-desktop.conf
+```
+
+Now scroll down to **4. Warnings and notifications** section and set value of **low_memory_warnings_enabled** to **False**, the code will look like below -
+
+**low_memory_warnings_enabled = False**
+
+Now scroll down to **5. Soft threshold** section and set value of **soft_threshold_min_mem** to **12.5** (for 8 GB Memory), the code will look like below -
+
+**soft_threshold_min_mem = 12.5 %**
+
+Now scroll down to **6. Hard threshold** section and set value of **hard_threshold_min_mem** to **10** (for 8 GB Memory), the code will look like below -
+
+**hard_threshold_min_mem = 10 %**
+
+Press **Ctrl+O** to save and **Ctrl+X** to exit.
+
+Now run below commands -
+
+```sh
+sudo systemctl stop nohang-desktop.service 
+sudo systemctl start nohang-desktop.service 
+```
+
 ## How to test nohang
 
 - The safest way is to run `nohang --memload`. This causes memory consumption, and the process will exits before OOM occurs.
