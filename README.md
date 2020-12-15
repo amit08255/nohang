@@ -283,13 +283,21 @@ Now scroll down to **4. Warnings and notifications** section and set value of **
 
 **low_memory_warnings_enabled = False**
 
-Now scroll down to **5. Soft threshold** section and set value of **soft_threshold_min_mem** to **12.5** (for 8 GB Memory), the code will look like below -
+Now scroll down to **5. Soft threshold** section and set value of **soft_threshold_min_mem** to **25** (for 8 GB Memory), the code will look like below -
 
-**soft_threshold_min_mem = 12.5 %**
+**soft_threshold_min_mem = 25 %**
 
-Now scroll down to **6. Hard threshold** section and set value of **hard_threshold_min_mem** to **10** (for 8 GB Memory), the code will look like below -
+Set value of **soft_threshold_min_swap** to **100** (for 8 GB Memory), the code will look like below -
 
-**hard_threshold_min_mem = 10 %**
+**soft_threshold_min_swap = 100 %**
+
+Now scroll down to **6. Hard threshold** section and set value of **hard_threshold_min_mem** to **30** (for 8 GB Memory), the code will look like below -
+
+**hard_threshold_min_mem = 30 %**
+
+Set value of **hard_threshold_min_swap** to **100** (for 8 GB Memory), the code will look like below -
+
+**hard_threshold_min_swap = 100 %**
 
 Press **Ctrl+O** to save and **Ctrl+X** to exit.
 
